@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive No-Gap Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #fdf5f0;
+    }
+
+       .wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color:white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      padding-top: 10px;
+      padding-right: 20px;
+      background-color: rgb(36, 141, 240);
+      padding-left: 20px;
+      margin-bottom: 00px;
+    }
+
+    .nav h1 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: #444;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .nav ul li a:hover {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+      }
+
+      .nav ul.show {
+        display: flex;
+      }
+    }
+
+    .content {
+      flex-grow: 1;
+      padding-top: 400px;
+      background-color:white;
+      padding-left: 20px;
+      background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c');
+      padding-bottom: 10px;
+    }
+
+    .content h4 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #38cd13;
+      margin-bottom: 10px;
+    }
+
+    .content h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #530afc;
+    }
+
+    .content h2 span {
+      font-weight: bold;
+    }
+
+    .content p {
+      font-size: 16px;
+      color: #0df00a;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      font-size: 15px;
+      background: transparent;
+      border: 2px solid #e8e7ef;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #e16a42;
+    }
+
+    .btn:hover {
+      background-color: #f00808;
+      color: #edf1f7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Navbar -->
+    <div class="nav">
+      <h1>Satyavi Technologies</h1>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Experiences</a></li>
+        <li><a href="#">Testimonial</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h4>WELCOME TO MY WEBSITE</h4>
+      <h2><span>Satyavi Technologies</span> currently based in Praygraj, India.</h2>
+      <p>Empowering the future with smart, reliable, and human-centered technology solutions</p>
+      <button class="btn">GET STARTED</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .left, .right, .image-section {
+      flex: 1 1 100%;
+      padding: 30px;
+    }
+
+    @media(min-width: 768px) {
+      .left {
+        flex: 1 1 40%;
+      }
+      .image-section {
+        flex: 1 1 30%;
+        text-align: center;
+      }
+      .right {
+        flex: 1 1 30%;
+      }
+    }
+
+    .left h2 {
+      font-size: 28px;
+      margin-bottom: 0px;
+    }
+
+    .left p {
+      margin-bottom: 0px;
+      line-height: 1.6;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 0px;
+    }
+
+    .right h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill p {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .progress {
+      background: #ddd;
+      border-radius: 20px;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: orange;
+      width: 0;
+    }
+
+    /* Cards section */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      flex: 1 1 100%;
+      padding: 50px;
+      color: white;
+      text-align: center;
+    }
+
+    @media(min-width: 768px) {
+      .card {
+        flex: 1 1 25%;
+      }
+    }
+
+    .card h4 {
+      margin: 15px 0 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .card:nth-child(1) {
+      background-color: #f4a940;
+    }
+
+    .card:nth-child(2) {
+      background-color: #e86e3f;
+    }
+
+    .card:nth-child(3) {
+      background-color: #1c1c1c;
+    }
+
+    .card:nth-child(4) {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    .card i {
+      font-size: 30px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Text Section -->
+    <div class="left">
+      <h2>Satyam Chauhan</h2>
+      <p style="color: #e69e2a;">Website Developer</p>
+      <p>I’m Satyam Chauhan, a web developer skilled in HTML, CSS, JavaScript, and Python. I build responsive and user-friendly websites. With a BCA degree and full stack training, </p>
+      <p>I enjoy creating real-world projects and continuously learning new development tools and technologies.</p>
+    </div>
+
+    <!-- Center Image -->
+    <div class="image-section">
+      <img src="myimage.jpg" alt="Person">
+    </div>
+
+    <!-- Right Skill Section -->
+    <div class="right">
+      <h3>My Skills</h3>
+      <p>Photoshop, HTML, CSS, JS, Web Design</p>
+
+      <div class="skill">
+        <p>Frontend Design</p>
+        <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>Backend processing</p>
+        <div class="progress"><div class="progress-bar" style="width: 50%;"></div></div>
+      </div>
+
+      <div class="skill">
+        <p>HTML5 & CSS3</p>
+        <div class="progress"><div class="progress-bar" style="width: 70%;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="cards">
+    <div class="card">
+      <i>🖥</i>
+      <h4>Interface Design</h4>
+      <p>Creating intuitive, user-friendly interfaces that enhance user experience and visual appeal.</p>
+    </div>
+    <div class="card">
+      <i>📩</i>
+      <h4>Media Strategy</h4>
+      <p>Crafting impactful media strategies to maximize reach, engagement, and brand visibility.</p>
+    </div>
+    <div class="card">
+      <i>📱</i>
+      <h4>Mobile App</h4>
+      <p>Designing and developing responsive mobile apps for seamless user experience across devices.</p>
+    </div>
+    <div class="card">
+      <i>🧠</i>
+      <h4>Coding</h4>
+      <p>Writing clean, efficient code and integrating AI to build smart, scalable solutions.</p>
+    </div>
+  </div>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    
+    
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .grid > div {
+      min-height: 300px;
+      padding: 30px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .image {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .exp {
+      background-color: #e16a42;
+    }
+
+    .edu {
+      background-color: #e5a94f;
+    }
+
+    .exp h2, .edu h2 {
+      margin-bottom: 10px;
+    }
+
+    .exp h4, .edu h4 {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .exp p, .edu p {
+      font-size: 14px;
+      color: #f2f2f2;
+      margin-bottom: 15px;
+    }
+
+    .edu i, .exp i {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .grid > div {
+        
+      }
+    }
+    .wrapper2{
+        padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper2">
+
+    <!-- Top Section: Experience & Image -->
+    <div class="grid">
+      <div class="image" style="background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769');"></div>
+      <div class="exp">
+        <h2>My Experiences</h2>
+        <p>Previous companies and my tasks</p>
+        <h4>SEO  <span style="font-weight:normal">2024 Sep – 2025 Feb</span></h4>
+        <p>Worked as an SEO Executive at Trank Technologies, optimizing websites for search engines, improving keyword rankings, driving organic traffic </p>
+        <p>Executing on-page and off-page SEO strategies to enhance online visibility and performance.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Section: Education & Image -->
+    <div class="grid">
+      <div class="edu">
+        <h2>My Education</h2>
+        <p>Completed BCA and 12th with focus on computers and technology.</p>
+        <h4>🎓 Bachelor of Computer Applications. <span style="font-weight:normal">2022 jun – 2025 may</span></h4>
+        <p>Completed Bachelor of Computer Applications with strong focus on web development.</p>
+        <h4>📘 Intermediate <span style="font-weight:normal">2019 May – 2021 Dec</span></h4>
+        <p>Completed 12th (Intermediate) with a focus on computer science and mathematics.</p>
+      </div>
+      <div class="image" style="background-image: url('https://images.unsplash.com/photo-1588702547923-7093a6c3ba33');"></div>
+    </div>
+
+  </div>
+  <style>
+ *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .contact-form {
+      background-color: #ee6c4d;
+      padding: 60px 40px;
+      color: white;
+      margin-left: 0px;
+    }
+
+    .contact-form h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-form p {
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      color: white;
+      font-size: 16px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-form button {
+      padding: 10px 30px;
+      border: none;
+      border-radius: 25px;
+      background: white;
+      color: #ee6c4d;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .contact-info {
+      background-color: #1a1a1a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 40px;
+      background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin-right: 0px;
+    }
+
+    .contact-info::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 1;
+    }
+
+    .contact-info-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-info h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    .contact-info .info-group {
+      margin-top: 20px;
+    }
+
+    .contact-info .info-group p {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .contact-form, .contact-info {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-wrapper">
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Say hello..</h2>
+      <p>Say hello or drop a message—I'm always ready to connect!.</p>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Write your message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="contact-info-content">
+        <h3>Visit my office</h3>
+        <p>Praygraj, Uttar pradesh, India</p>
+
+        <div class="info-group">
+          <h3>Contact.</h3>
+          <p>📞 +91-8932909871</p>
+          <p>📧 satyamipl1456@gmail.com</p>
+          <p>🌐 Satyaminfotech.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
